@@ -1,5 +1,5 @@
+import urlcat from "urlcat";
 import { HttpError } from "./httpError";
-import { URL } from "whatwg-url";
 import {
   type RequestMaker,
   type CreateApiOptions,
@@ -8,7 +8,7 @@ import {
 } from "./types";
 
 export abstract class CreateApi {
-  private readonly _apiUrl: URL;
+  private readonly _apiUrl: string;
   private _defaultHeaders: Record<string, string> = {
     "Content-Type": "application/json",
   };
@@ -16,7 +16,7 @@ export abstract class CreateApi {
   private readonly _requestMaker: RequestMaker;
 
   constructor(options: CreateApiOptions, requestMaker: RequestMaker) {
-    this._apiUrl = new URL(options.apiUrl);
+    this._apiUrl = options.apiUrl;
     this._requestMaker = requestMaker;
     if (options.defaultHeaders != null) {
       this._defaultHeaders = {
@@ -37,7 +37,7 @@ export abstract class CreateApi {
 
   async makeRequest<T>(options: RequestOptions): Promise<ResponseReturned<T>> {
     return await new Promise<ResponseReturned<T>>((resolve, reject) => {
-      const mergedUrl = new URL(options.path, this._apiUrl);
+      const mergedUrl = urlcat(options.path, this._apiUrl);
       const mergedHeaders = {
         ...this._defaultHeaders,
         ...options.headers,

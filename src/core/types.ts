@@ -1,8 +1,7 @@
-import { type URL } from "whatwg-url";
 export interface Request {
   requestLine: {
     method: string;
-    url: URL;
+    url: string;
   };
   headers: Record<string, string>;
   body?: string;
