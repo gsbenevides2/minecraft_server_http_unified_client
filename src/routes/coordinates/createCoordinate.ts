@@ -1,3 +1,4 @@
+import { Method } from "core/types";
 import { type CreateApi } from "../../core/createApiFactory";
 import { type CreateCoordinate } from "./types";
 
@@ -11,7 +12,7 @@ export function makeCreateCoordinate(api: CreateApi) {
       z,
     };
     await api.makeRequest({
-      method: "POST",
+      method: Method.POST,
       path: "/coordinates",
       body,
     });

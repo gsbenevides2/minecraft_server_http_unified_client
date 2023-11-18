@@ -47,7 +47,7 @@ export abstract class CreateApi {
             ? options.body
             : JSON.stringify(options.body)
           : undefined;
-      const method = String(options.method).toUpperCase();
+      const method = options.method;
 
       const request = {
         requestLine: {

@@ -1,12 +1,17 @@
 export interface Request {
   requestLine: {
-    method: string;
+    method: Method;
     url: string;
   };
   headers: Record<string, string>;
   body?: string;
 }
-
+export enum Method {
+  GET = "GET",
+  POST = "POST",
+  PUT = "PUT",
+  DELETE = "DELETE",
+}
 export interface Response {
   statusLine: {
     statusCode: number;
@@ -23,7 +28,7 @@ export interface CreateApiOptions {
 
 export interface RequestOptions {
   path: string;
-  method: "GET" | "POST" | "PUT" | "DELETE";
+  method: Method;
   headers?: Record<string, string>;
   body?: any;
 }
