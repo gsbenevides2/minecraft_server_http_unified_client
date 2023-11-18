@@ -1,6 +1,6 @@
 {
   "name": "@gsbenevides2/minecraft_http_server_client",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": {
@@ -26,8 +26,5 @@
     "eslint-plugin-promise": "^6.0.0",
     "prettier": "^3.0.3",
     "typescript": "*"
-  },
-  "dependencies": {
-    "urlcat": "^3.1.0"
   }
 }
