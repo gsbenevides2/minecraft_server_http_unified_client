@@ -14,11 +14,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "18.x"
-          registry-url: "https://npm.pkg.github.com"
-          always-auth: true
-      - run: yarn
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: yarn publish --non-interactive --registry=https://npm.pkg.github.com
+          registry-url: "https://npm.pkg.github.com/"
+      - run: npm ci
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
