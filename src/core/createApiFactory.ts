@@ -1,4 +1,3 @@
-import urlcat from "urlcat";
 import { HttpError } from "./httpError";
 import {
   type RequestMaker,
@@ -37,7 +36,7 @@ export abstract class CreateApi {
 
   async makeRequest<T>(options: RequestOptions): Promise<ResponseReturned<T>> {
     return await new Promise<ResponseReturned<T>>((resolve, reject) => {
-      const mergedUrl = urlcat(options.path, this._apiUrl);
+      const mergedUrl = (this._apiUrl + options.path).replace(/\/$/, "");
       const mergedHeaders = {
         ...this._defaultHeaders,
         ...options.headers,
