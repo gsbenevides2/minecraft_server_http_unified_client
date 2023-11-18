@@ -15,7 +15,7 @@ import { makeAllowPlayer } from "./routes/players/allowPlayer";
 import { makeDisallowPlayer } from "./routes/players/disallowPlayer";
 import { makeBanPlayer } from "./routes/players/banPlayer";
 import { makeUnbanPlayer } from "./routes/players/unbanPlayer";
-import { type RequestMaker } from "core/types";
+import { type RequestMaker } from "./core/types";
 
 export class Api extends CreateApi {
   constructor(requestMaker: RequestMaker, phoneNumberOrGametag?: string) {
