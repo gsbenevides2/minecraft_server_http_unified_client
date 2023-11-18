@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gsbenevides2/minecraft_server_http_unified_client.git"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
