@@ -1,4 +1,4 @@
-import { Method } from "core/types";
+import { Method } from "../../core/types";
 import { type CreateApi } from "../../core/createApiFactory";
 
 export function makeAllowPlayer(api: CreateApi) {
