@@ -1,3 +1,4 @@
+import { type URL } from "whatwg-url";
 export interface Request {
   requestLine: {
     method: string;

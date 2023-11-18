@@ -1,5 +1,5 @@
 import { HttpError } from "./httpError";
-
+import { URL } from "whatwg-url";
 import {
   type RequestMaker,
   type CreateApiOptions,
