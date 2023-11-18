@@ -17,6 +17,10 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
           always-auth: true
       - run: yarn
+      - run: yarn build
+      - run: yarn login --non-interactive
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn publish --non-interactive
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
