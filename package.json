@@ -1,5 +1,5 @@
 {
-  "name": "auth",
+  "name": "minecraft_http_server_client",
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
